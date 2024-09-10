@@ -175,12 +175,14 @@ SWAGGER_SETTINGS = {
     'DEFAULT_API_URL': 'https://shymaaismail.tech/learningmate-api/',
  }
 # Swagger setting
-FORCE_SCRIPT_NAME = '/learningmate-api'
+#FORCE_SCRIPT_NAME = '/learningmate-api'
 CSRF_COOKIE_SECURE = False
 JWT_EXPIRATION_DELTA = datetime.timedelta(seconds=3600)
 CORS_ALLOWED_ORIGINS = [
     'https://shymaaismail.tech',
     'http://localhost:8000',
+    'http://localhost:3000',
+    'http://127.0.0.1:3000',
     'http://127.0.0.1:8000',
     # Add other origins as needed
 ]
