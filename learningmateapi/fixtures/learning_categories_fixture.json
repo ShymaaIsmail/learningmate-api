@@ -1,0 +1,58 @@
+[
+  {
+      "model": "learningmateapi.LearningCategory",
+      "pk": 1,
+      "fields": {
+          "name": "Business"
+      }
+  },
+  {
+      "model": "learningmateapi.LearningCategory",
+      "pk": 2,
+      "fields": {
+            "name": "Design"
+      }
+  },
+  {
+      "model": "learningmateapi.LearningCategory",
+      "pk": 3,
+      "fields": {
+          "name": "Development"
+      }
+  },
+  {
+      "model": "learningmateapi.LearningCategory",
+      "pk": 4,
+      "fields": {
+            "name": "Health & Fitness"
+      }
+  },
+  {
+      "model": "learningmateapi.LearningCategory",
+      "pk": 5,
+      "fields": {
+          "name": "Finance & Accounting "
+      }
+  },
+  {
+      "model": "learningmateapi.LearningCategory",
+      "pk": 6,
+      "fields": {
+            "name": "IT & Software"
+      }
+  },
+  {
+      "model": "learningmateapi.LearningCategory",
+      "pk": 7,
+      "fields": {
+          "name": "Marketing"
+      }
+  },
+  {
+      "model": "learningmateapi.LearningCategory",
+      "pk": 8,
+      "fields": {
+          "name": "Teaching & Academics"
+      }
+  }
+]
