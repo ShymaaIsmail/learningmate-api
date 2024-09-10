@@ -11,6 +11,7 @@ from rest_framework.authtoken.models import Token
 # This class likely represents a user model that extends AbstractUser in a Python application.
 class User(AbstractUser):
     last_login = models.DateTimeField(auto_now=True, null=True)
+    google_user_id = models.CharField(max_length=255, unique=True, null=True, blank=True)
 
     def __str__(self):
         return self.fullname
