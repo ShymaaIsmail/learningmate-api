@@ -21,7 +21,10 @@ schema_view = get_schema_view(
 urlpatterns = [
     # User APIs
     path('api/v1/auth/', include('learningmateapi.api_urls.auth_urls')),
+    #Learning Categories APIs
     path('api/v1/learning_categories/', include('learningmateapi.api_urls.learning_categories_urls')),
+    #Courses APIs
+    path('api/v1/courses/', include('learningmateapi.api_urls.courses_urls')),
     # Documentation
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

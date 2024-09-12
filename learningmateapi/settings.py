@@ -187,3 +187,11 @@ CORS_ALLOWED_ORIGINS = [
     # Add other origins as needed
 ]
 CORS_ALLOW_CREDENTIALS = True 
+
+# Udemy API Settings
+UDEMY_API_CONFIG = {
+    'CLIENT_ID': os.getenv('UDEMY_CLIENT_ID'),
+    'CLIENT_SECRET': os.getenv('UDEMY_CLIENT_SECRET'),
+    'BASE_URL': os.getenv('UDEMY_API_BASE_URL'),
+    'AUTH_HEADER': os.getenv('UDEMY_AUTH_HEADER'),
+}

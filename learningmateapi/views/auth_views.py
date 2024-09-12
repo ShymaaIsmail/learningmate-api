@@ -52,13 +52,17 @@ class UserAuthView(APIView):
             google_user_id = id_info['sub']
             email = id_info['email']
             name = id_info.get('name', '')
+            given_name = id_info.get('given_name', '')
+            family_name = id_info.get('family_name', '')
 
             # Create or update user record in the database
             user, created = User.objects.get_or_create(
                 google_user_id=google_user_id,
                 defaults={
-                    'username': email,
-                    'first_name': name,
+                    'username': name ,
+                    'email': email,
+                    'first_name': given_name,
+                    'last_name': family_name,
                 }
             )
             if created:
