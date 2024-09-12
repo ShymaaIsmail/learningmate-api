@@ -193,5 +193,5 @@ UDEMY_API_CONFIG = {
     'CLIENT_ID': os.getenv('UDEMY_CLIENT_ID'),
     'CLIENT_SECRET': os.getenv('UDEMY_CLIENT_SECRET'),
     'BASE_URL': os.getenv('UDEMY_API_BASE_URL'),
-    'AUTH_HEADER': os.getenv('UDEMY_AUTH_HEADER'),
-}
+    'WEBSITE_URL': os.getenv('UDEMY_WEBSITE_URL')
+    }
