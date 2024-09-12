@@ -16,9 +16,9 @@ class UserAuthView(APIView):
         request_body=openapi.Schema(
             type=openapi.TYPE_OBJECT,
             properties={
-                'token': openapi.Schema(type=openapi.TYPE_STRING, description='Google OAuth2 token'),
+                'google_token': openapi.Schema(type=openapi.TYPE_STRING, description='Google OAuth2 token'),
             },
-            required=['token'],
+            required=['google_token'],
         ),
         responses={
             200: openapi.Response(
@@ -40,13 +40,13 @@ class UserAuthView(APIView):
         }
     )
     def post(self, request, *args, **kwargs):
-        token = request.data.get('token')
-        if not token:
-            return Response({'error': 'Token is required'}, status=status.HTTP_400_BAD_REQUEST)
+        google_token = request.data.get('google_token')
+        if not google_token:
+            return Response({'error': 'google_token is required'}, status=status.HTTP_400_BAD_REQUEST)
 
         try:
             # Verify the Google token
-            id_info = id_token.verify_oauth2_token(token, requests.Request())
+            id_info = id_token.verify_oauth2_token(google_token, requests.Request())
             
             # Extract user information
             google_user_id = id_info['sub']
