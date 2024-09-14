@@ -25,6 +25,8 @@ urlpatterns = [
     path('api/v1/learning_categories/', include('learningmateapi.api_urls.learning_categories_urls')),
     #Courses APIs
     path('api/v1/courses/', include('learningmateapi.api_urls.courses_urls')),
+    #Learning Plans APIs
+    path('api/v1/learning-plans/', include('learningmateapi.api_urls.learning_plans_urls')),
     # Documentation
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),

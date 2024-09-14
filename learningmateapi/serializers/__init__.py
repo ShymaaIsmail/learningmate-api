@@ -1,2 +1,3 @@
-from .learningcategory_serializer import *
+from .learningcategory_serializer import LearningCategorySerializer
 from .user_serializer import UserSerializer, UserRegistrationSerializer
+from .learningplan_serializer import LearningPlanSerializer

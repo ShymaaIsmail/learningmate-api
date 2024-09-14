@@ -8,7 +8,7 @@ from learningmateapi.views.base_user_view import BaseUserView
 from ..services.udemy_service import UdemyService
 
 
-class CourseListView(APIView):
+class CourseListView(BaseUserView):
     """
     API view to handle fetching a list of courses from the Udemy API based on the category name.
     This endpoint is secured with JWT authentication.
