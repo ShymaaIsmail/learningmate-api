@@ -10,7 +10,6 @@ class LearningPlan(models.Model):
         on_delete=models.CASCADE,
         related_name="learning_plans"
     )
-    name = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     start_date = models.DateField()
     end_date = models.DateField()
@@ -21,4 +20,4 @@ class LearningPlan(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return f"{self.name} - {self.title}"
+        return f"{self.title}"
