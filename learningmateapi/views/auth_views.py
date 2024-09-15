@@ -10,6 +10,8 @@ from learningmateapi.models.user import User
 from drf_yasg.utils import swagger_auto_schema
 from drf_yasg import openapi
 
+from learningmateapi.views.base_user_view import BaseUserView
+
 class UserAuthView(APIView):
 
     @swagger_auto_schema(
@@ -59,7 +61,7 @@ class UserAuthView(APIView):
             user, created = User.objects.get_or_create(
                 google_user_id=google_user_id,
                 defaults={
-                    'username': name ,
+                    'username': email ,
                     'email': email,
                     'first_name': given_name,
                     'last_name': family_name,
@@ -75,3 +77,13 @@ class UserAuthView(APIView):
             return Response({'token': str(refresh.access_token)}, status=status.HTTP_200_OK)
         except ValueError:
             return Response({'error': 'Invalid token'}, status=status.HTTP_400_BAD_REQUEST)
+
+class UserLogoutView(BaseUserView):
+    def post(self, request, *args, **kwargs):
+        try:
+            # Get the token from the request
+            token = RefreshToken.objects.get(key=request.auth.key)
+            token.delete()  # Remove the token
+            return Response({'detail': 'Successfully logged out.'}, status=status.HTTP_200_OK)
+        except RefreshToken.DoesNotExist:
+            return Response({'detail': 'Token not found.'}, status=status.HTTP_400_BAD_REQUEST)
