@@ -11,7 +11,6 @@
 - [API Endpoints](#api-endpoints)
 - [Authentication](#authentication)
 - [Database Structure](#database-structure)
-- [Testing](#testing)
 - [API Documentation](#api-documentation)
 - [Contributing](#contributing)
 - [License](#license)
@@ -47,29 +46,32 @@ Ensure that you have the following installed:
 
 ### **Clone the Repository**
 
-```bash
+```
 git clone https://github.com/ShymaaIsmail/learningmate-api.git
 cd learningmate-api
-Set Up Virtual Environment
-bash
+### **Set Up Virtual Environment**
 
+
+```
 python3 -m venv env
 source env/bin/activate
-Install Dependencies
-bash
+
+- **Install Dependencies**  
+
 
 pip install -r requirements.txt
-Database Setup
+
+```
+- **Database Setup** 
 Create a PostgreSQL database:
 sql
 
-CREATE DATABASE learningmate_db;
+- **CREATE DATABASE learningmate_db;** 
 Set up your database credentials in the project's environment variables.
-Environment Variables
+```Environment Variables```
 Create a .env file in the root directory with the following variables:
 
-bash
-
+```
 SECRET_KEY=your_secret_key
 DEBUG=True
 DATABASE_NAME=learningmate_db
@@ -81,29 +83,31 @@ GOOGLE_OAUTH_CLIENT_ID=your_google_oauth_client_id
 GOOGLE_OAUTH_CLIENT_SECRET=your_google_oauth_client_secret
 UDEMY_API_CLIENT_ID=your_udemy_api_client_id
 UDEMY_API_CLIENT_SECRET=your_udemy_api_client_secret
-Apply Migrations
-bash
+```
+### **Apply Migrations**
 
 python manage.py migrate
 Create Superuser
-bash
+
 
 python manage.py createsuperuser
 Run the Development Server
-bash
 
+```
 python manage.py runserver
+```
 Your API will now be running on http://localhost:8000.
 
-Running the Project
+### **Running the Project**
 To start the Django server and begin using the API, ensure that your virtual environment is activated and run:
 
-bash
 
+```
 python manage.py runserver
+```
 You can access the API at http://localhost:8000/api/v1/.
 
-API Endpoints
+### **API Endpoints**
 The API provides the following core endpoints:
 
 Endpoint	Method	Description
@@ -125,7 +129,7 @@ The JWT token is required for protected endpoints.
 JWT Token Authentication
 For authenticated requests, include the JWT token in the Authorization header:
 
-bash
+
 
 Authorization: Bearer <your-jwt-token>
 Database Structure
@@ -133,14 +137,9 @@ User: Stores user information authenticated via Google.
 Learning Plan: Contains the user's learning plan data, including course references and timelines.
 Course: Stores course data retrieved from the Udemy API.
 Category: Stores categories that group courses into relevant topics.
-Testing
-Running Tests
-To ensure everything is working as expected, you can run the test suite with:
 
-bash
 
-python manage.py test
-API Documentation
+### **API Documentation**
 The LearningMate API offers real-time interactive API documentation.
 
 Swagger: Accessible at http://localhost:8000/swagger/
